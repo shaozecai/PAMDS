@@ -1,0 +1,30 @@
+{
+  "name": "pamds-app",
+  "version": "1.0.0",
+  "description": "项目自动管理部署系统后端接口",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "boom": "^7.3.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-jwt": "^6.0.0",
+    "express-session": "^1.17.1",
+    "express-validator": "^6.6.0",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.27.0",
+    "mysql": "^2.18.1",
+    "qcloudsms_js": "^0.1.1",
+    "tencentcloud-sdk-nodejs": "^3.0.225"
+  },
+  "devDependencies": {
+    "crypto": "^1.0.1",
+    "nodemon": "^2.0.4"
+  }
+}
