@@ -1,7 +1,8 @@
-const path = require('path');
+/* eslint-disable @typescript-eslint/no-var-requires */
 
+const path = require('path');
 module.exports = {
-    publicPath:process.env.NODE_ENV==='production' ? './web/dist/':'./',
+    publicPath:process.env.NODE_ENV==='production' ? './web/dist/':'/',
     devServer: {
         disableHostCheck: true,
         port: 8080,
@@ -10,26 +11,30 @@ module.exports = {
             target: 'http://localhost:9080',    
             changeOrigin: true,
             ws: false,
-            // pathRewrite: {
-            //   "^/api": "/api"
+            // pathRewrite:{
+            //     '^/api':'/pamds/api'
             // }
           }
         }
     },
     configureWebpack: {        
         output: {            
-            path: path.join(__dirname, './dist'), //出口（打包后）文件路径
+            path: path.join(__dirname, './dist'), 
         }
     },
     chainWebpack: config => {
       config.module
-       .rule('fonts')
-       .test(/\.(woff2?|eot|ttf|otf)(\?.*)?$/i)
-       .use('url-loader')
-        .loader('url-loader')
-        .tap(options => {
-         // 修改它的选项...        
-         return undefined
-        })
+      .rule('fonts')
+      .test(/\.(woff2?|eot|ttf|otf)(\?.*)?$/i)
+      .use('url-loader')
+      .loader('url-loader')
+      .tap(() => {
+        return undefined
+      });
+
+      // 自定义路径
+      config.resolve.alias
+      .set('@', path.join(__dirname, './src'))
+      
      }
 };

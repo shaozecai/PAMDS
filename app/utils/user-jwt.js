@@ -1,7 +1,7 @@
 /**
  * 描述: jwt-token验证和解析函数
- * 作者: Xi Xi
- * 日期: 2020-08-14
+ * 作者: shaozecai
+ * 日期: 2020-11-12
 */
 
 const jwt = require('jsonwebtoken'); // 引入验证jsonwebtoken模块
@@ -23,17 +23,14 @@ const jwtAuth = expressJwt({
       return req.query.token
     }
   }
-  // 设置jwt认证白名单，比如/api/login登录接口不需要拦截
+  // 设置jwt认证白名单，比如/api/login登录接口不需要XXXXX拦截
 }).unless({
   path: [
-    '/api/send',
-    '/api/test',
-    '/api/login',
-    '/api/register',
-    '/api/resetPwd'
+    '/api/login/login',
+    '/api/login/register',
+    '/api/login/send',
   ]
 })
-
 // jwt-token解析
 function decode(req) {
   const token = req.get('Authorization')

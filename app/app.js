@@ -1,8 +1,9 @@
 /**
  * 描述: 入口文件
- * 作者: Xi Xi
- * 日期: 2020-08-14
+ * 作者: shaozecai
+ * 日期: 2020-11-12
 */
+
 const bodyParser = require('body-parser'); // 引入body-parser模块
 const express = require('express'); // 引入express模块
 const cors = require('cors'); // 引入cors模块
